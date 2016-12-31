@@ -32,6 +32,11 @@ class Organisation
     protected $name;
 
     /**
+     * @var string
+     */
+    protected $slug;
+
+    /**
      * @var Collection $locations
      */
     protected $locations;
@@ -123,5 +128,21 @@ class Organisation
     public function setEnabled($enabled)
     {
         $this->enabled = $enabled;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param string $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
     }
 }
