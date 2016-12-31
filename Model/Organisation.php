@@ -22,6 +22,16 @@ class Organisation
     protected $id;
 
     /**
+     * @var string
+     */
+    protected $name;
+
+    /**
+     * @var Collection $locations
+     */
+    protected $locations;
+
+    /**
      * @var Collection
      */
     protected $positions;
@@ -37,4 +47,61 @@ class Organisation
         $this->positions->removeElement($position);
         $position->setOrganisation(null);
     }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getLocations()
+    {
+        return $this->locations;
+    }
+
+    /**
+     * @param Collection $locations
+     */
+    public function setLocations($locations)
+    {
+        $this->locations = $locations;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getPositions()
+    {
+        return $this->positions;
+    }
+
+    /**
+     * @param Collection $positions
+     */
+    public function setPositions($positions)
+    {
+        $this->positions = $positions;
+    }
+
 }
