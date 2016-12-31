@@ -1,6 +1,8 @@
 <?php
 namespace Bean\Component\Organisation\Model;
 
+use Symfony\Component\Security\Core\User\AdvancedUserInterface;
+
 class Position
 {
     /**
@@ -14,25 +16,16 @@ class Position
     protected $email;
 
     /**
-     * @var Organisation $organisation
+     * @var Organisation $employer
      */
-    protected $organisation;
+    protected $employer;
+
 
     /**
-     * @return Organisation
+     * @var AdvancedUserInterface $employee
      */
-    public function getOrganisation()
-    {
-        return $this->organisation;
-    }
+    protected $employee;
 
-    /**
-     * @param Organisation $organisation
-     */
-    public function setOrganisation($organisation)
-    {
-        $this->organisation = $organisation;
-    }
 
     /**
      * @return string
@@ -50,4 +43,36 @@ class Position
         $this->email = $email;
     }
 
+    /**
+     * @return Organisation
+     */
+    public function getEmployer()
+    {
+        return $this->employer;
+    }
+
+    /**
+     * @param Organisation $employer
+     */
+    public function setEmployer($employer)
+    {
+        $this->employer = $employer;
+    }
+
+    /**
+     * @return AdvancedUserInterface
+     */
+    public function getEmployee()
+    {
+        return $this->employee;
+    }
+
+    /**
+     * @param AdvancedUserInterface $employee
+     */
+    public function setEmployee($employee)
+    {
+        $this->employee = $employee;
+    }
+    
 }
