@@ -22,6 +22,11 @@ class Organisation
     protected $id;
 
     /**
+     * @var boolean
+     */
+    protected $enabled;
+
+    /**
      * @var string
      */
     protected $name;
@@ -104,4 +109,19 @@ class Organisation
         $this->positions = $positions;
     }
 
+    /**
+     * @return bool
+     */
+    public function isEnabled()
+    {
+        return $this->enabled;
+    }
+
+    /**
+     * @param bool $enabled
+     */
+    public function setEnabled($enabled)
+    {
+        $this->enabled = $enabled;
+    }
 }
