@@ -4,6 +4,11 @@ namespace Bean\Component\Organisation\Model;
 class Position
 {
     /**
+     * @var mixed
+     */
+    protected $id;
+
+    /**
      * @var Organisation $organisation
      */
     protected $organisation;
