@@ -16,6 +16,27 @@ class Position
     protected $email;
 
     /**
+     * @var array
+     */
+    protected $roles = array();
+
+    public function addRole($role)
+    {
+        if (in_array($role, $this->roles)) {
+            return $this->roles;
+        }
+        $this->roles[] = $role;
+        return $this->roles;
+    }
+
+    public function removeRole($role)
+    {
+        $key = array_search($role, $this->roles);
+        array_splice($this->roles, $key, 1);
+        return $this->roles;
+    }
+
+    /**
      * @var Organisation $employer
      */
     protected $employer;
@@ -74,5 +95,5 @@ class Position
     {
         $this->employee = $employee;
     }
-    
+
 }

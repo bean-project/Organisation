@@ -49,13 +49,13 @@ class Organisation
     public function addPosition(Position $position)
     {
         $this->positions->add($position);
-        $position->setOrganisation($this);
+        $position->setEmployer($this);
     }
 
     public function removePosition(Position $position)
     {
         $this->positions->removeElement($position);
-        $position->setOrganisation(null);
+        $position->setEmployer(null);
     }
 
     /**
