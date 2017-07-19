@@ -3,6 +3,9 @@ namespace Bean\Component\Organisation\Model;
 
 use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 
+/**
+ * @deprecated
+ */
 class Position
 {
     /**
@@ -19,9 +22,10 @@ class Position
      * @var array
      */
     protected $roles = array();
-
+    
     public function addRole($role)
     {
+        $role = strtoupper($role);
         if (in_array($role, $this->roles)) {
             return $this->roles;
         }
@@ -31,10 +35,12 @@ class Position
 
     public function removeRole($role)
     {
+        $role = strtoupper($role);
         $key = array_search($role, $this->roles);
         array_splice($this->roles, $key, 1);
         return $this->roles;
     }
+
 
     /**
      * @var Organisation $employer

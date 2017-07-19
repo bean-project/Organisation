@@ -43,22 +43,49 @@ class Organisation
 
     /**
      * @var Collection
+     * @deprecated
      */
     protected $positions;
-
+	
+	/**
+	 * @param Position $position
+	 * @deprecated
+	 */
     public function addPosition(Position $position)
     {
         $this->positions->add($position);
         $position->setEmployer($this);
     }
-
+	
+	/**
+	 * @param Position $position
+	 * @deprecated
+	 */
     public function removePosition(Position $position)
     {
         $this->positions->removeElement($position);
         $position->setEmployer(null);
     }
-
-    /**
+	
+	/**
+	 * @var Collection
+	 */
+	protected $members;
+	
+	public function addMember(Member $member)
+	{
+		$this->members->add($member);
+		$member->setEmployer($this);
+	}
+	
+	public function removeMember(Member $member)
+	{
+		$this->members->removeElement($member);
+		$member->setEmployer(null);
+	}
+	
+	
+	/**
      * @return mixed
      */
     public function getId()
