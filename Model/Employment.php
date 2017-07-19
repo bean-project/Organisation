@@ -3,7 +3,7 @@ namespace Bean\Component\Organisation\Model;
 
 use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 
-class Member
+class Employment
 {
     /**
      * @var mixed

@@ -70,18 +70,18 @@ class Organisation
 	/**
 	 * @var Collection
 	 */
-	protected $members;
+	protected $employments;
 	
-	public function addMember(Member $member)
+	public function addEmployment(Employment $employment)
 	{
-		$this->members->add($member);
-		$member->setEmployer($this);
+		$this->employments->add($employment);
+		$employment->setEmployer($this);
 	}
 	
-	public function removeMember(Member $member)
+	public function removeEmployment(Employment $employment)
 	{
-		$this->members->removeElement($member);
-		$member->setEmployer(null);
+		$this->employments->removeElement($employment);
+		$employment->setEmployer(null);
 	}
 	
 	
@@ -127,6 +127,7 @@ class Organisation
 
     /**
      * @return Collection
+     * @deprecated
      */
     public function getPositions()
     {
@@ -135,6 +136,7 @@ class Organisation
 
     /**
      * @param Collection $positions
+     * @deprecated
      */
     public function setPositions($positions)
     {
@@ -172,4 +174,19 @@ class Organisation
     {
         $this->slug = $slug;
     }
+	
+	/**
+	 * @return Collection
+	 */
+	public function getEmployments() {
+		return $this->employments;
+	}
+	
+	/**
+	 * @param Collection $employments
+	 */
+	public function setEmployments($employments) {
+		$this->employments = $employments;
+	}
+	
 }
